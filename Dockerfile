@@ -1,4 +1,3 @@
-FROM mysql:8
-COPY . /db
-RUN chmod +x /db/import_sql_data.sh
-RUN /db/import_sql_data.sh
+FROM mariadb:10.3
+
+ADD kaiserhofinfovis.sql /docker-entrypoint-initdb.d
